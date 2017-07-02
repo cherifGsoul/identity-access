@@ -23,11 +23,13 @@ class MemoryAdapterSpec extends ObjectBehavior
       $this->shouldImplement(AdapterInterface::class);
     }
 
-    function it_authenticates_a_user(UserRepository $userRepository, EncryptionService $encryptionService, User $user)
+    function it_authenticates_a_user(UserRepository $userRepository, EncryptionService $encryptionService)
     {
       $this->beConstructedWith($userRepository,$encryptionService);
-      $encryptionService->verify(Argument::cetera(),Argument::cetera())->willReturn(true);
-      $userRepository->ofUsername(Argument::cetera())->willReturn($user);
-      $this->authenticate()->shouldReturnInstanceOf(Result::class);
+      $this->withUsername('ausername');
+      $this->withPassword('apassword');
+      $encryptionService->verify('apassword','apassword')->willReturn(true);
+      $this->authenticate()->shouldReturnAnInstanceOf(Result::class);
+      $userRepository->ofUsername(Argument::type('string'))->shouldHaveBeenCalled();
     }
 }

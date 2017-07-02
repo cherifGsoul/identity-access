@@ -48,7 +48,7 @@ class MemoryAdapter implements AdapterInterface
 
     return new Result(
                 Result::FAILURE_CREDENTIAL_INVALID,
-                null,
+                $userToken,
                 ['Invalid credentials.']
               );
   }

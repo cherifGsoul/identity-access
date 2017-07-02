@@ -23,9 +23,19 @@ class User
       $this->person = $person;
     }
 
+    public function userId()
+    {
+      return $this->userId;
+    }
+
     public function username()
     {
       return $this->username;
+    }
+
+    public function password()
+    {
+      return $this->password;
     }
 
     public function person()
@@ -33,8 +43,12 @@ class User
       return $this->person;
     }
 
-    public function userId()
+    public function toUserToken()
     {
-        return $this->userId;
+      return new UserToken(
+        $this->userId(),
+        $this->username(),
+        $this->person()->emailAddress()->toString()
+      );
     }
 }
