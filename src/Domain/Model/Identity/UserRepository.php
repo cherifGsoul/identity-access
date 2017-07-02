@@ -6,4 +6,8 @@ interface UserRepository
 {
 
     public function ofUsername();
+
+    public function add(User $user);
+    
+    public function nextIdentity();
 }
