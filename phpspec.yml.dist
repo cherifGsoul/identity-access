@@ -1,0 +1,10 @@
+extensions:
+  PhpSpec\NyanFormattersExtension\Extension: ~
+
+formatter.name: pretty
+
+suites:
+  IdentityAccess:
+    namespace: IdentityAccess
+    psr4_prefix: IdentityAccess
+    src_path: src/
