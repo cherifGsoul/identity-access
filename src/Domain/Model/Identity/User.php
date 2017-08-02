@@ -4,15 +4,15 @@ namespace IdentityAccess\Domain\Model\Identity;
 
 class User
 {
-  private $userId;
-  private $username;
-  private $password;
-  private $person;
+    private $userId;
+    private $username;
+    private $password;
+    private $person;
 
     public static function register(UserId $userId, $username, $password, Person $person)
     {
-        $user = new User($userId, $username, $password,$person);
-        return $user;
+      $user = new User($userId, $username, $password,$person);
+      return $user;
     }
 
     public function __construct(UserId $userId, $username, $password, Person $person)

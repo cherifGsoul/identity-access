@@ -2,9 +2,7 @@
 
 namespace IdentityAccess\Domain\Model\Identity;
 
-/**
- *
- */
+
 class EmailAddress
 {
   private $emailAddress;

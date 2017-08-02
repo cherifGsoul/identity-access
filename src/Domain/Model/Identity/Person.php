@@ -4,16 +4,23 @@ namespace IdentityAccess\Domain\Model\Identity;
 
 class Person
 {
-  private $fullName;
-  private $contactInformation;
+    private $fullName;
+    private $contactInformation;
+    private $user;
 
-  public function __construct(FullName $fullName,ContactInformation $contactInformation)
-  {
-    $this->fullName = $fullName;
-    $this->contactInformation = $contactInformation;
-  }
+    public function __construct(FullName $fullName,ContactInformation $contactInformation)
+    {
+      $this->fullName = $fullName;
+      $this->contactInformation = $contactInformation;
+    }
 
-
+    /**
+     *
+     */
+     public function user()
+     {
+       return $this->user;
+     }
 
     /**
      * Get the value of Full Name
@@ -32,7 +39,7 @@ class Person
      */
     public function contactInformation()
     {
-        return $this->contactInformation;
+      return $this->contactInformation;
     }
 
 }

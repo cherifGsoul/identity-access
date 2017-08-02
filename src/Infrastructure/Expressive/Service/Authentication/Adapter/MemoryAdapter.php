@@ -14,11 +14,11 @@ class MemoryAdapter implements AdapterInterface
   private $userRepository;
   private $encryptionService;
 
-    public function __construct(UserRepository $userRepository, EncryptionService $encryptionService)
-    {
-      $this->userRepository = $userRepository;
-      $this->encryptionService = $encryptionService;
-    }
+  public function __construct(UserRepository $userRepository, EncryptionService $encryptionService)
+  {
+    $this->userRepository = $userRepository;
+    $this->encryptionService = $encryptionService;
+  }
 
   public function withUsername($username)
   {
